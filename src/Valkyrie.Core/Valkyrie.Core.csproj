@@ -2,11 +2,13 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
-    <PackageIconUrl>http://52.50.170.213/valkyrie.jpg</PackageIconUrl>
-    <Authors>Emre Karahan</Authors>
+    <PackageIconUrl></PackageIconUrl>
+    <Authors>Emre Karahan&lt;emre.karahan@gmail.com&gt;</Authors>
     <Description>Valkyrie Core Package</Description>
-    <Version>1.0.1</Version>
+    <Version>1.0.3</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageIcon>valkyrie.jpg</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,6 +18,10 @@
     <EmbeddedResource Remove="Events\**" />
     <None Remove="Contracts\EventBus\**" />
     <None Remove="Events\**" />
+    <None Include="..\..\valkyrie.jpg">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 
@@ -27,6 +33,9 @@
     <PackageReference Include="FluentScheduler" Version="5.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
   </ItemGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.1'">
+    <DefineConstants>NETCORE;NETSTANDARD;NETSTANDARD2_1</DefineConstants>
+  </PropertyGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.1'">
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.1" />
@@ -39,6 +48,10 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.1" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.1" />
   </ItemGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">
+    <DefineConstants>NETCORE;NETSTANDARD;NETSTANDARD2_0</DefineConstants>
+  </PropertyGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="2.2.0" />
@@ -50,9 +63,7 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="2.2.0" />
-
   </ItemGroup>
-
   <!--<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <OutputPath>..\..\output\Boyner.Core</OutputPath>
     <OutDir>$(OutputPath)</OutDir>
