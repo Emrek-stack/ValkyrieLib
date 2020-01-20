@@ -2,11 +2,20 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
-    <PackageIconUrl>http://52.50.170.213/valkyrie.jpg</PackageIconUrl>
+    <PackageIconUrl></PackageIconUrl>
     <Description>Valkyrie MongoDB Repository</Description>
     <Authosr>Emre Karahan</Authosr>
-    <Version>1.0.0</Version>
+    <Version>1.0.3</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageIcon>valkyrie.jpg</PackageIcon>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">
+    <DefineConstants>NETCORE;NETSTANDARD;NETSTANDARD2_0</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.1'">
+    <DefineConstants>NETCORE;NETSTANDARD;NETSTANDARD2_1</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,6 +24,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Valkyrie.Core\Valkyrie.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\valkyrie.jpg">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
