@@ -10,11 +10,14 @@ namespace Valkyrie.Data.Mongo
     {
         public static IServiceCollection UseMongoDb(this IServiceCollection services, Action<MongoOptions> connection)
         {
+            services.Configure(connection);
             MongoOptions mongoOptions = new MongoOptions();
             connection?.Invoke(mongoOptions);
             services.AddScoped<IUnitOfWork>(provider =>
                 new UnitOfWork.Impl.UnitOfWork(mongoOptions.ConnectionString));
             return services;
         }
+
+
     }
 }
