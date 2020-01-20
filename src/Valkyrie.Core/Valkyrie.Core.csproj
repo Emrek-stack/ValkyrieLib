@@ -6,7 +6,8 @@
     <PackageIconUrl>http://52.50.170.213/valkyrie.jpg</PackageIconUrl>
     <Authors>Emre Karahan</Authors>
     <Description>Valkyrie Core Package</Description>
-    <Version>1.0.7</Version>
+    <Version>1.0.1</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>

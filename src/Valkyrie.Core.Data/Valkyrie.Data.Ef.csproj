@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <LangVersion>latest</LangVersion>
     <PackageIconUrl>http://52.50.170.213/valkyrie.jpg</PackageIconUrl>
     <Authors>Emre Karahan</Authors>
     <Description>Valkyrie Core Data Package EF Repository</Description>
     <Product>Valkyrie.Data.Ef</Product>
-    <Version>1.0.7</Version>
+    <Version>1.0.0</Version>
   </PropertyGroup>
 
 

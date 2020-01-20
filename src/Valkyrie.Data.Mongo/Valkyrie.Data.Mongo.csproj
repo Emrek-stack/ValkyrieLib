@@ -5,7 +5,8 @@
     <PackageIconUrl>http://52.50.170.213/valkyrie.jpg</PackageIconUrl>
     <Description>Valkyrie MongoDB Repository</Description>
     <Authosr>Emre Karahan</Authosr>
-    <Version>1.0.7</Version>
+    <Version>1.0.0</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
