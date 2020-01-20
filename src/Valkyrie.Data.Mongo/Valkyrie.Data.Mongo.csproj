@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
+    <PackageIconUrl>http://52.50.170.213/valkyrie.jpg</PackageIconUrl>
+    <Description>Valkyrie MongoDB Repository</Description>
+    <Authosr>Emre Karahan</Authosr>
+    <Version>1.0.7</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.10.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Valkyrie.Core\Valkyrie.Core.csproj" />
+  </ItemGroup>
+
+</Project>

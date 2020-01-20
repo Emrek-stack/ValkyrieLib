@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.1</TargetFrameworks>
+    <Description>Serilog enricher for parametrized logging of MassTransit message properties.</Description>
+    <Authors>Emre Karahan</Authors>
+    <Company>Emre Karahan</Company>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <AssemblyName>Serilog.Enrichers.MassTransitMessage</AssemblyName>
+    <RootNamespace>Serilog.Enrichers.MassTransitMessage</RootNamespace>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <ApplicationIcon />
+    <OutputType>Library</OutputType>
+    <StartupObject />
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Version>1.0.2</Version>
+    <PackageTags>Serilog, MassTransit, RabbitMQ, ActiveMQ, Azure-Service-Bus, Amazon SQS/SNS, Elastic, ELK</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog" Version="2.9.0" />
+    <PackageReference Include="System.Collections.Immutable" Version="1.7.0" />
+    <PackageReference Include="MassTransit" Version="6.0.1" />
+  </ItemGroup>
+
+</Project>

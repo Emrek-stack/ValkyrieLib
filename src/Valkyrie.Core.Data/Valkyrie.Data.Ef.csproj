@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <LangVersion>latest</LangVersion>
+    <PackageIconUrl>http://52.50.170.213/valkyrie.jpg</PackageIconUrl>
+    <Authors>Emre Karahan</Authors>
+    <Description>Valkyrie Core Data Package EF Repository</Description>
+    <Product>Valkyrie.Data.Ef</Product>
+    <Version>1.0.7</Version>
+  </PropertyGroup>
+
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="2.2.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.6" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.1">
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
+  </ItemGroup>
+
+  
+  <!--<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\output\Boyner.Core.Data</OutputPath>
+    <OutDir>$(OutputPath)</OutDir>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\output\Boyner.Core.Data</OutputPath>
+    <OutDir>$(OutputPath)</OutDir>
+  </PropertyGroup>-->
+
+  <ItemGroup>
+    <ProjectReference Include="..\Valkyrie.Core\Valkyrie.Core.csproj" />
+  </ItemGroup>
+
+
+
+</Project>

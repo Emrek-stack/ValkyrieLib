@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
+    <PackageIconUrl>http://52.50.170.213/valkyrie.jpg</PackageIconUrl>
+    <Description>Valkyrie Serilog RabbitMQ Provider</Description>
+    <Authosr>Emre Karahan</Authosr>
+    <Version>1.0.7</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.1" />
+    <PackageReference Include="Serilog.Sinks.RabbitMQ" Version="3.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Valkyrie.Core\Valkyrie.Core.csproj" />
+  </ItemGroup>
+</Project>
