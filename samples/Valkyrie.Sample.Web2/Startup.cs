@@ -7,10 +7,14 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Serilog.Sinks.RabbitMQ;
+using Serilog.Sinks.RabbitMQ.Sinks.RabbitMQ;
 using Valkyrie.Logging;
 using Valkyrie.Logging.Extensions;
+using Valkyrie.Logging.Model;
 
 namespace Valkyrie.Sample.Web2
 {
@@ -26,6 +30,9 @@ namespace Valkyrie.Sample.Web2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Add functionality to inject IOptions<T>
+            services.AddOptions();
+
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -33,7 +40,16 @@ namespace Valkyrie.Sample.Web2
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddValyrieLog();
+            services.AddValyrieLog(_ =>
+            {
+                _.ExchangeType = "direct";
+                _.Exchange = "logging";
+                _.Password = "guest";
+                _.DeliveryMode = RabbitMQDeliveryMode.Durable;
+                _.Username = "guest";
+                _.Hostnames.Add("localhost");
+                _.Port = 5672;
+            });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
