@@ -17,7 +17,10 @@
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.1'">
     <DefineConstants>NETCORE;NETSTANDARD;NETSTANDARD2_1</DefineConstants>
   </PropertyGroup>
-
+  <PropertyGroup>
+    <Version Condition=" '$(VersionSuffix)' == '' ">0.0.1</Version>
+    <Version Condition=" '$(VersionSuffix)' != '' ">$(VersionSuffix)</Version>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="MongoDB.Driver" Version="2.10.1" />
   </ItemGroup>

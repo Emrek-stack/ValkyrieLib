@@ -11,6 +11,11 @@
     <PackageIcon>valkyrie.jpg</PackageIcon>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <Version Condition=" '$(VersionSuffix)' == '' ">0.0.1</Version>
+    <Version Condition=" '$(VersionSuffix)' != '' ">$(VersionSuffix)</Version>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="Contracts\EventBus\**" />
     <Compile Remove="Events\**" />
